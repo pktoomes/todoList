@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form action = '/' method = 'POST'>
+    <input type = "text" name = "newtask" placeholder = "New Task"/>
+    <button type = 'submit'>Enter</button>
+  </form>
+    <div id = "listHere">
+      <h1>Not Completed</h1>
+      <ul>{{#notCompleted}}<li>{{task}}<form action="/{{id}}" method="post">
+          <button type='submit' value='{{id}}' name='doneButton'>Completed</button></form></li>{{/notCompleted}}
+        </ul>
+      <h1>Completed</h1>
+      <ul>{{#completed}}<li>{{task}}</li>{{/completed}}
+    </div>
+  </body>
+</html>
